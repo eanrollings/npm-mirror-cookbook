@@ -25,7 +25,7 @@ end
 
 log "Scheduled npm mirroring; check `#{couch_url}/_utils/status.html` to monitor."
 
-include_recipe "git"
+include_recipe "git::#{node['git']['install_method']}"
 git "/srv/npmjs.org" do
   repository "https://github.com/isaacs/npmjs.org.git"
 end
